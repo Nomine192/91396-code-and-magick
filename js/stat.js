@@ -20,18 +20,16 @@ window.renderStatistics = function (ctx, names, times) {
   drawCloud(110, 20, 420, 270);
   ctx.fillStyle = 'rgb(256, 256, 256)';
   drawCloud(100, 10, 420, 270);
-  ctx.font = '16px PT Mono';
   ctx.fillStyle = 'rgb(0, 0, 0)';
   ctx.shadowColor = '#000';
-  ctx.shadowOffsetX = 2;
-  ctx.shadowOffsetY = 2;
-  ctx.shadowBlur = 5;
-  ctx.fillText('Ура вы победили!', 120, 40);
-  ctx.fillText('Список результатов:', 120, 60);
+  ctx.shadowOffsetX = 1;
+  ctx.shadowOffsetY = 1;
+  ctx.shadowBlur = 1;
 
-  var printText = function (data, width, height, color) {
+  var printText = function (data, width, height, color,font) {
     ctx.fillStyle = color;
     ctx.fillText(data, width, height);
+    ctx.font = font;
   };
 
   var drawHisto = function (x1, y1, x2, y2) {
@@ -64,6 +62,8 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillStyle = ['rgb(0, 0,', ((Math.random() * 5) * 50).toFixed(0), ')'].join('');
     }
     drawHisto((histoX + columnIndent * i), (245 - height), 40, height);
+    printText('Ура вы победили!', 120, 40, '#4f4843','16px PT Mono');
+    printText('Список результатов:', 120, 60, '#4f4843', '16px PT Mono');
     printText(time.toFixed(0), (histoX + columnIndent * i), (240 - height), '#000');
     printText(name, (histoX + columnIndent * i), 260, '#000');
   }
