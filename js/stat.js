@@ -1,4 +1,5 @@
 'use strict';
+
 window.renderStatistics = function (ctx, names, times) {
   var drawCloud = function (x, y, width, heigth) {
     var offset = 10;
@@ -26,7 +27,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.shadowOffsetY = 1;
   ctx.shadowBlur = 1;
 
-  var printText = function (data, width, height, color,font) {
+  var printText = function (data, width, height, color, font) {
     ctx.fillStyle = color;
     ctx.fillText(data, width, height);
     ctx.font = font;
@@ -62,7 +63,7 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillStyle = ['rgb(0, 0,', ((Math.random() * 5) * 50).toFixed(0), ')'].join('');
     }
     drawHisto((histoX + columnIndent * i), (245 - height), 40, height);
-    printText('Ура вы победили!', 120, 40, '#4f4843','16px PT Mono');
+    printText('Ура вы победили!', 120, 40, '#4f4843', '16px PT Mono');
     printText('Список результатов:', 120, 60, '#4f4843', '16px PT Mono');
     printText(time.toFixed(0), (histoX + columnIndent * i), (240 - height), '#000');
     printText(name, (histoX + columnIndent * i), 260, '#000');
