@@ -28,45 +28,29 @@ var fireballColor = [
   '#e6e848'
 ];
 
-var menuOpen = function () {
-  setupOpen.addEventListener('click', function () {
-    setup.classList.remove('invisible');
-  });
-};
+setupOpen.addEventListener('click', function () {
+  setup.classList.remove('invisible');
+});
 
-var menuClose = function () {
-  setupClose.addEventListener('click', function () {
-    setup.classList.add('invisible');
-  });
-};
+setupClose.addEventListener('click', function () {
+  setup.classList.add('invisible');
+});
 
-var robaCheck = function () {
-  wizardCoat.addEventListener('click', function () {
-    var colorNumber = Math.floor(Math.random() * wizardRobeColor.length);
-    wizardCoat.style.fill = wizardRobeColor[colorNumber];
-  });
-};
+wizardCoat.addEventListener('click', function () {
+  var colorNumber = Math.floor(Math.random() * wizardRobeColor.length);
+  wizardCoat.style.fill = wizardRobeColor[colorNumber];
+});
 
-var yeysCheck = function () {
-  wizardYeys.addEventListener('click', function () {
-    var colorNumber = Math.floor(Math.random() * wizardEyesColor.length);
-    wizardYeys.style.fill = wizardRobeColor[colorNumber];
-  });
-};
 
-var fireballCheck = function () {
-  setupFireballWrap.addEventListener('click', function () {
-    var colorNumber = Math.floor(Math.random() * fireballColor.length);
-    setupFireballWrap.style.background = wizardRobeColor[colorNumber];
-  });
-};
+wizardYeys.addEventListener('click', function () {
+  var colorNumber = Math.floor(Math.random() * wizardEyesColor.length);
+  wizardYeys.style.fill = wizardRobeColor[colorNumber];
+});
+
+setupFireballWrap.addEventListener('click', function () {
+  var colorNumber = Math.floor(Math.random() * fireballColor.length);
+  setupFireballWrap.style.background = wizardRobeColor[colorNumber];
+});
 
 setupUserName.required = true;
 setupUserName.maxLength = 50;
-
-
-menuOpen();
-menuClose();
-robaCheck();
-yeysCheck();
-fireballCheck();
